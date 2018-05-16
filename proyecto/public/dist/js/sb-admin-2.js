@@ -5,6 +5,9 @@
  */
 $(function() {
     $('#side-menu').metisMenu();
+    $('.boton-formulario').click(function(){
+        $('.formulario').submit();
+    });
 });
 
 //Loads the correct sidebar on window load,

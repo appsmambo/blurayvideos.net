@@ -5,28 +5,29 @@
         <h1 class="page-header">
             Nueva película
             <a class="btn btn-warning btn-sm pull-right" href="{{ url('peliculas') }}">Cancelar</a>
+            <input type="button" class="btn btn-primary btn-sm pull-right boton-formulario" value="Grabar">
         </h1>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <form role="form" method="post">
-            <input type="hidden" name="" value="{{ csrf_token() }}">
+        <form action="{{ url('grabar-pelicula') }}" role="form" method="post" class="formulario" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="form-group">
                 <label for="titulo">Título de la película:</label>
-                <input class="form-control" name="titulo" id="titulo">
+                <input class="form-control" name="titulo" id="titulo" required>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="sinopsis">Sinopsis:</label>
-                        <textarea name="sinopsis" id="sinopsis" class="form-control" rows="4"></textarea>
+                        <textarea name="sinopsis" id="sinopsis" class="form-control" rows="4" required></textarea>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="categoria">Categoría:</label><br>
-                                <select class="form-control" name="categoria" id="categoria">
+                                <select class="form-control" name="categoria" id="categoria" required>
                                     <option value="">Seleccione</option>
                                 @forelse ($categorias as $categoria)
                                     <option value="{{ $categoria->id }}">{{ $categoria->titulo }}</option>
@@ -39,7 +40,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="estudio">Seleccionar estudio:</label>
-                                <select class="form-control" name="estudio" id="estudio">
+                                <select class="form-control" name="estudio" id="estudio" required>
                                     <option value="">Seleccione</option>
                                 @forelse ($estudios as $estudio)
                                     <option value="{{ $estudio->id }}">{{ $estudio->titulo }}</option>
@@ -91,7 +92,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="stock">Stock:</label>
-                                <input type="number" class="form-control" name="stock" id="stock">
+                                <input type="number" class="form-control" name="stock" id="stock" required>
                             </div>
                         </div>
                     </div>
@@ -109,7 +110,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="precio">Precio normal:</label>
-                                <input type="text" class="form-control" name="precio" id="precio">
+                                <input type="text" class="form-control" name="precio" id="precio" required>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -120,8 +121,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="formatos">Seleccionar genero:</label>
-                        <select multiple="multiple" class="multiSelect" name="formatos[]" id="formatos">
+                        <label for="generos">Seleccionar genero:</label>
+                        <select multiple="multiple" class="multiSelect" name="generos[]" id="generos">
                         @forelse ($generos as $genero)
                             <option value="{{ $genero->id }}">{{ $genero->titulo }}</option>
                         @empty
@@ -193,6 +194,12 @@
                         <label class="checkbox-inline">
                             <input type="checkbox" name="idiomas[]" value="Portugués"> Portugués
                         </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="idiomas[]" value="Francés"> Francés
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="idiomas[]" value="Italiano"> Italiano
+                        </label>
                     </div>
                     <div class="form-group">
                         <label>Seleccionar subtitulos:</label><br>
@@ -207,6 +214,12 @@
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" name="subtitulos[]" value="Portugués"> Portugués
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="subtitulos[]" value="Francés"> Francés
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="subtitulos[]" value="Italiano"> Italiano
                         </label>
                     </div>
                 </div>
@@ -244,6 +257,15 @@
                 </div>
             </div>
         </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <p class="page-header">
+            <a class="btn btn-warning btn-sm pull-right" href="{{ url('peliculas') }}">Cancelar</a>
+            <input type="button" class="btn btn-primary btn-sm pull-right boton-formulario" value="Grabar">
+            <br><br>
+        </p>
     </div>
 </div>
 @endsection

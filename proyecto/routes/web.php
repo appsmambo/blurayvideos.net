@@ -21,3 +21,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/peliculas', 'PeliculaController@getPeliculas')->name('peliculas');
 Route::get('/nueva-pelicula', 'PeliculaController@getNuevaPelicula')->name('nuevaPelicula');
+Route::post('/grabar-pelicula', 'PeliculaController@postGrabarPelicula')->name('grabarPelicula');
+
+Route::get('storage/{filename}', function ($filename)
+{
+    $path = storage_path('app/images/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
