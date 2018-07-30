@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Categoria;
-use App\Estudio;
-use App\Formato;
-use App\Genero;
 use App\Pelicula;
-use App\Pais;
 
 use Illuminate\Http\Request;
 
@@ -25,16 +21,7 @@ class PeliculaController extends Controller
     public function getNuevaPelicula()
     {
         $categorias = Categoria::all();
-        $estudios = Estudio::all();
-        $formatos = Formato::all();
-        $generos = Genero::all();
-        $paises = Pais::all();
-        return view('peliculas.nueva')
-                ->with('categorias', $categorias)
-                ->with('estudios', $estudios)
-                ->with('formatos', $formatos)
-                ->with('generos', $generos)
-                ->with('paises', $paises);
+        return view('peliculas.nueva')->with('categorias', $categorias);
     }
     public function postGrabarPelicula(Request $request)
     {
@@ -42,41 +29,14 @@ class PeliculaController extends Controller
         $pelicula = new Pelicula;
         $pelicula->titulo = $request->titulo;
         $pelicula->sinopsis = $request->sinopsis;
-        $pelicula->categoria = $request->categoria;
-        $pelicula->estudio = $request->estudio;
-        $pelicula->pais = $request->pais;
-        $pelicula->fecha_lanzamiento = $request->fecha_lanzamiento;
-        $pelicula->duracion = $request->duracion;
-        $pelicula->stock = $request->stock;
-        $pelicula->estado = $request->estado;
+        $pelicula->ficha_tecnica = $request->ficha_tecnica;
+        $pelicula->directores = $request->directores;
         $pelicula->precio = $request->precio;
         $pelicula->precio_oferta = $request->precio_oferta;
-
-        // datos de multiselect
-        if (is_array($request->videos) && count($request->videos)) {
-            $videos = implode($request->videos, '|');
-            $pelicula->video = $videos;
-        } else {
-            $pelicula->video = $request->videos;
-        }
-        if (is_array($request->audios) && count($request->audios)) {
-            $audios = implode($request->audios, '|');
-            $pelicula->audio = $audios;
-        } else {
-            $pelicula->audio = $request->audios;
-        }
-        if (is_array($request->idiomas) && count($request->idiomas)) {
-            $idiomas = implode($request->idiomas, '|');
-            $pelicula->idioma = $idiomas;
-        } else {
-            $pelicula->idioma = $request->idiomas;
-        }
-        if (is_array($request->subtitulos) && count($request->subtitulos)) {
-            $subtitulos = implode($request->subtitulos, '|');
-            $pelicula->subtitulos = $subtitulos;
-        } else {
-            $pelicula->subtitulos = $request->subtitulos;
-        }
+        $pelicula->stock = $request->stock;
+        $pelicula->categoria = $request->categoria;
+        $pelicula->trailer = $request->trailer;
+        $pelicula->estado = $request->estado;
 
         // las portadas
         if ($request->hasFile('imagen_1')) {
