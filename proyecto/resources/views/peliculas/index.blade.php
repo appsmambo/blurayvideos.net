@@ -22,10 +22,13 @@
             <tbody>
 @forelse ($peliculas as $pelicula)
     <tr class="{{ $loop->index % 2 ? 'odd' : 'even' }}">
-        <td>{{ $pelicula->titulo }}</td>
+        <td><a href="{{ url('/editar-pelicula/'.$pelicula->id) }}">{{ $pelicula->titulo }}</a></td>
         <td>{{ $pelicula->precio }}</td>
         <td>{{ $pelicula->stock }}</td>
-        <td></td>
+        <td>
+            <a class="btn btn-danger btn-sm pull-right" href="{{ url('/borrar-pelicula/'.$pelicula->id) }}">Borrar</a> &nbsp; 
+            <a class="btn btn-primary btn-sm pull-right" href="{{ url('/editar-pelicula/'.$pelicula->id) }}">Editar</a>
+        </td>
     </tr>
 @empty
     <tr><td colspan="4">No se encontraron registros.</td></tr>

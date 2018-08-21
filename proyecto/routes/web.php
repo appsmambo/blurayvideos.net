@@ -17,10 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('logout', 'Auth\LoginController@logout');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/peliculas', 'PeliculaController@getPeliculas')->name('peliculas');
 Route::get('/nueva-pelicula', 'PeliculaController@getNuevaPelicula')->name('nuevaPelicula');
+Route::get('/editar-pelicula/{id}', 'PeliculaController@getEditarPelicula')->name('editarPelicula');
+Route::get('/borrar-pelicula/{id}', 'PeliculaController@getBorrarPelicula')->name('borrarPelicula');
 Route::post('/grabar-pelicula', 'PeliculaController@postGrabarPelicula')->name('grabarPelicula');
 
 Route::get('storage/{filename}', function ($filename)

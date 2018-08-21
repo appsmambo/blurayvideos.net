@@ -3,7 +3,7 @@ tinymce.init({
   theme: 'modern',
   height: 160,
   menubar: false,
-  toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist'
+  toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist | removeformat'
 });
 $(function() {
   $('.multiSelect').multiSelect();
