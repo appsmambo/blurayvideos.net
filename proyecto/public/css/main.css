@@ -1,0 +1,72 @@
+body {
+	font-family:'Roboto', sans-serif;
+}
+a, a:hover {
+	text-decoration:none;
+	-webkit-transition:all .2s ease-out;
+	-moz-transition:all .2s ease-out;
+	-o-transition:all .2s ease-out;
+	transition:all .2s ease-out;
+}
+header {
+	background-image:url('../img/fondo-header.jpg');
+	background-position:top center;
+	background-repeat:no-repeat;
+}
+h2 {
+	color:#ffF;
+	font-size:2rem;
+	font-weight:700;
+	font-style:italic;
+}
+h2 small {
+	font-size:1.2rem
+}
+.nav-link {
+	color:#000!important;
+}
+.active .nav-link {
+	color:#172967!important;
+	font-weight:700;
+}
+.contact-cart a {
+	color:#fff;
+	opacity:.8;
+}
+.contact-cart a:hover {
+	opacity:1;
+}
+.contact-cart {
+	background-color:rgba(0,0,0,.4);
+	color:#fff;
+}
+.contact-cart .items {
+	height:60px;
+}
+.container-navbar .navbar {
+	border-bottom:4px solid #d3d3d3;
+}
+.slider-portadas img {
+	border:20px solid #0095d5;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	-webkit-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
+	-moz-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
+	-o-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
+	-ms-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
+	transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
+	/*http://www.agenciesranked.com/createcss3/*/
+}
+
+@media (min-width:1200px) {
+	.nav-link {
+		font-size:1.25rem
+	}
+}
+
+@media (min-width:1400px) {
+	.container {
+		max-width:1380px
+	}
+}

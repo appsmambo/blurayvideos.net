@@ -1,0 +1,29 @@
+$(function() {
+	$('.slider-portadas').slick({
+		autoplay:true,
+		arrows:false,
+		dots:false,
+		centerMode:true,
+		centerPadding:'10px',
+		slidesToShow:3,
+		responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '10px',
+				slidesToShow:1
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '10px',
+				slidesToShow: 1
+			}
+		}]
+	});
+});
