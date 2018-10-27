@@ -43,31 +43,15 @@
 </h2>
 <div class="container">
 	<div class="slider-portadas">
-		<div><img src="{{url('img/sliders/01.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/02.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/03.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/04.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/05.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/06.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/07.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/08.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/09.jpg')}}" alt="" class="img-responsive"></div>
-		<div><img src="{{url('img/sliders/10.jpg')}}" alt="" class="img-responsive"></div>
+		<div><img src="{{url('img/sliders/01.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/02.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/03.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/04.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/05.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/06.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/07.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/08.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/09.jpg')}}" alt="" class="img-responsive rotado"></div>
+		<div><img src="{{url('img/sliders/10.jpg')}}" alt="" class="img-responsive rotado"></div>
 	</div>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-<br>

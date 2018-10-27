@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/home', 'PeliculaController@home')->name('home');
 
 Route::get('/peliculas', 'PeliculaController@getPeliculas')->name('peliculas');
 Route::get('/nueva-pelicula', 'PeliculaController@getNuevaPelicula')->name('nuevaPelicula');
@@ -27,17 +27,17 @@ Route::post('/grabar-pelicula', 'PeliculaController@postGrabarPelicula')->name('
 
 Route::get('storage/{filename}', function ($filename)
 {
-    $path = storage_path('app/images/' . $filename);
+	$path = storage_path('app/images/' . $filename);
 
-    if (!File::exists($path)) {
-        abort(404);
-    }
+	if (!File::exists($path)) {
+		abort(404);
+	}
 
-    $file = File::get($path);
-    $type = File::mimeType($path);
+	$file = File::get($path);
+	$type = File::mimeType($path);
 
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
+	$response = Response::make($file, 200);
+	$response->header("Content-Type", $type);
 
-    return $response;
+	return $response;
 });

@@ -1,5 +1,7 @@
 body {
-	font-family:'Roboto', sans-serif;
+	background-color:#f3f3f3;
+	font-family:'Oswald', sans-serif;
+	overflow-x:hidden;
 }
 a, a:hover {
 	text-decoration:none;
@@ -15,12 +17,16 @@ header {
 }
 h2 {
 	color:#ffF;
-	font-size:2rem;
+	font-size:2.75rem;
 	font-weight:700;
 	font-style:italic;
+	letter-spacing:.2rem;
+	line-height:2rem;
 }
 h2 small {
-	font-size:1.2rem
+	font-size:1.5rem;
+	font-style:initial;
+	letter-spacing:0;
 }
 .nav-link {
 	color:#000!important;
@@ -46,19 +52,149 @@ h2 small {
 .container-navbar .navbar {
 	border-bottom:4px solid #d3d3d3;
 }
-.slider-portadas img {
+img.rotado {
 	border:20px solid #0095d5;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	border-radius:10px;
-	-webkit-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
-	-moz-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
-	-o-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
-	-ms-transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
-	transform:perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.8);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-transform: perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.75);
+	-moz-transform: perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.75);
+	-o-transform: perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.75);
+	-ms-transform: perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.75);
+	transform: perspective(500px) rotateX(0deg) rotateY(10deg) rotateZ(-1deg) scale(0.75);
 	/*http://www.agenciesranked.com/createcss3/*/
 }
+.seccion-buscador {
+	color:#fff;
+	font-size:1.15rem;
+}
+.seccion-buscador .generos {
+	
+}
+.seccion-buscador .buscador {
+	background-color:#008ecc;
+}
+.seccion-buscador button {
+	background-color:#585858;
+	border:none;
+	cursor:pointer;
+}
+.seccion-contenido {
+	
+}
+.bg-dark2 {
+	background-color:#585858;
+}
+/* f3f3f3 */
 
+.oculto {
+	display:none;
+}
+.jumbotron {
+	background-color:inherit;
+	height:100vh;
+	margin:0;
+	position:absolute;
+	width:100vw;
+	z-index:99;
+}
+.lds-roller {
+	display:inline-block;
+	position:relative;
+	width:64px;
+	height:64px;
+}
+.lds-roller div {
+	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	transform-origin: 32px 32px;
+}
+.lds-roller div:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #172866;
+	margin: -3px 0 0 -3px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 50px;
+  left: 50px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 54px;
+  left: 45px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 57px;
+  left: 39px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 58px;
+  left: 32px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 57px;
+  left: 25px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 54px;
+  left: 19px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 50px;
+  left: 14px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 45px;
+  left: 10px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width:768px) {
+	.seccion-buscador .form-group {
+		margin-bottom:0
+	}
+	.seccion-buscador .form-control {
+		border:none;
+	}
+	.seccion-buscador select {
+		float:right;
+		width:auto;
+	}
+}
 @media (min-width:1200px) {
 	.nav-link {
 		font-size:1.25rem

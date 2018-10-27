@@ -1,7 +1,8 @@
 $(function() {
 	$('.slider-portadas').slick({
 		autoplay:true,
-		arrows:false,
+		arrows:true,
+
 		dots:false,
 		centerMode:true,
 		centerPadding:'10px',
@@ -25,5 +26,11 @@ $(function() {
 				slidesToShow: 1
 			}
 		}]
+	});
+});
+$(window).on("load", function(e) {
+	$('header.oculto, section.oculto').removeClass('oculto');
+	$('.jumbotron').delay(250).fadeOut('slow', function() {
+		$(this).remove();
 	});
 });

@@ -14,6 +14,11 @@ class PeliculaController extends Controller
         $this->middleware('auth');
     }
 
+    public function home()
+    {
+        return view('home');
+    }
+
     public function getPeliculas()
     {
         $peliculas = Pelicula::where('estado', '<>', '-1')->get();
